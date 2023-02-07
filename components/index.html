@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <title>Staging</title>
 </head>
-<body>
+<body onload="updateTime()">
 <h1>Page pushed into 'staging'</h1>
 <h2>Header 2 added from 'f/alert'</h2>
 </body>
+<script>
+    function updateTime() {
+        const h3 = document.createElement('h3')
+        let content = document.createTextNode(new Date().toString())
+        document.getElementsByTagName('body')[0].appendChild(h3.appendChild(content))
+        document.getElementsByTagName('h3')[0].innerHTML = new Date().toString()
+        setTimeout( updateTime, 1000)
+    }
+</script>
 </html>
